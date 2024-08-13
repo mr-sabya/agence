@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Inner Banner html start-->
+{% include 'partials/banner.html' with  title=title %}
+<!-- Inner Banner html end-->
+
+<!-- home gallery section html start -->
+<section class="gallery-section">
+    <div class="container">
+        <div class="gallery-inner">
+            <div class="gallery-container">
+                <div class="single-gallery">
+                    <figure class="gallery-img">
+                        <a href="{% static 'assets/img/agency-img27.jpg' %}" data-fancybox="gallery">
+                            <img src="{% static 'assets/img/agency-img27.jpg' %}" alt="">
+                        </a>
+                        <div class="facility-wrapper">
+                            <div class="facility-content">
+                                <h4 class="facility-title">
+                                    <a href="portfolio-detail.html">Digital Marketing</a>
+                                </h4>
+                                <p class="facility-info">
+                                    Ullam aliquet mattis dignissim scelerisque anim exercitation officia, accusamus potenti ipsum, similique.
+                                </p>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+                <div class="single-gallery">
+                    <figure class="gallery-img">
+                        <a href="{% static 'assets/img/agency-img26.jpg' %}" data-fancybox="gallery">
+                            <img src="{% static 'assets/img/agency-img26.jpg' %}" alt="">
+                        </a>
+                        <div class="facility-wrapper">
+                            <div class="facility-content">
+                                <h4 class="facility-title">
+                                    <a href="portfolio-detail.html">Web Development</a>
+                                </h4>
+                                <p class="facility-info">
+                                    Ullam aliquet mattis dignissim scelerisque anim exercitation officia, accusamus potenti ipsum, similique.
+                                </p>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+                <div class="single-gallery">
+                    <figure class="gallery-img">
+                        <a href="{% static 'assets/img/agency-img25.jpg' %}" data-fancybox="gallery">
+                            <img src="{% static 'assets/img/agency-img25.jpg' %}" alt="">
+                        </a>
+                        <div class="facility-wrapper">
+                            <div class="facility-content">
+                                <h4 class="facility-title">
+                                    <a href="portfolio-detail.html">Group Meeting</a>
+                                </h4>
+                                <p class="facility-info">
+                                    Ullam aliquet mattis dignissim scelerisque anim exercitation officia, accusamus potenti ipsum, similique.
+                                </p>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+                <div class="single-gallery">
+                    <figure class="gallery-img">
+                        <a href="{% static 'assets/img/agency-img24.jpg' %}" data-fancybox="gallery">
+                            <img src="{% static 'assets/img/agency-img24.jpg' %}" alt="">
+                        </a>
+                        <div class="facility-wrapper">
+                            <div class="facility-content">
+                                <h4 class="facility-title">
+                                    <a href="portfolio-detail.html">Planning & Developing</a>
+                                </h4>
+                                <p class="facility-info">
+                                    Ullam aliquet mattis dignissim scelerisque anim exercitation officia, accusamus potenti ipsum, similique.
+                                </p>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+                <div class="single-gallery">
+                    <figure class="gallery-img">
+                        <a href="{% static 'assets/img/agency-img23.jpg' %}" data-fancybox="gallery">
+                            <img src="{% static 'assets/img/agency-img23.jpg' %}" alt="">
+                        </a>
+                        <div class="facility-wrapper">
+                            <div class="facility-content">
+                                <h4 class="facility-title">
+                                    <a href="portfolio-detail.html">Plan Implementation</a>
+                                </h4>
+                                <p class="facility-info">
+                                    Ullam aliquet mattis dignissim scelerisque anim exercitation officia, accusamus potenti ipsum, similique.
+                                </p>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+                <div class="single-gallery">
+                    <figure class="gallery-img">
+                        <a href="{% static 'assets/img/agency-img7.jpg' %}" data-fancybox="gallery">
+                            <img src="{% static 'assets/img/agency-img7.jpg' %}" alt="">
+                        </a>
+                        <div class="facility-wrapper">
+                            <div class="facility-content">
+                                <h4 class="facility-title">
+                                    <a href="portfolio-detail.html">Business Management</a>
+                                </h4>
+                                <p class="facility-info">
+                                    Ullam aliquet mattis dignissim scelerisque anim exercitation officia, accusamus potenti ipsum, similique.
+                                </p>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- home gallery section html end -->
+<!-- home subscribe section html start -->
+<section class="subscribe-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="subscribe-section-head">
+                    <div class="divider-wrapper">
+                        <span class="title-divider">
+                            <span class="top-title">SUBSCRIBE</span>
+                        </span>
+                    </div>
+                    <h3 class="section-title">
+                        <span class="title-highlight">Subscribe </span>
+                        To Get Latest Update From Us
+                    </h3>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 d-flex align-items-end">
+                <div class="subscribe-right-wrapper">
+                    <div class="subscribe-info">
+                        <p>
+                            Officiis laboriosam provident harum asperiores occaecati qui! Enim elementum illum, vivamus justo sed impedit aenean.
+                        </p>
+                    </div>
+                    <form class="subscribe-form row">
+                        <div class="col-sm-8 pe-1">
+                            <input type="email" name="emails" placeholder="Your Email*" class="form-control">
+                        </div>
+                        <div class="col-sm-4 ps-1">
+                            <button type="submit" class="button-round-primary">SIGN UP !</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- home subscribe section html end -->
+ {% endblock %}

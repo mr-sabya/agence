@@ -31,14 +31,14 @@
 
 
     <link rel="stylesheet" type="text/css" href="{% static 'assets/style.css' %}">
-    <title>Home – Agence – Digital Agency Elementor Template Kit</title>
+    <title>{{ title }} – Agence – Digital Agency Elementor Template Kit</title>
 </head>
 
 <body class="home">
 
     <div id="siteLoader" class="site-loader ">
         <div class="preloader-content">
-            <img src="assets/img/loader1.gif" alt="">
+            <img src="{% static 'assets/img/loader1.gif' %}" alt="">
         </div>
     </div>
 
@@ -74,7 +74,7 @@
             </div>
         </div>
 
-        
+
     </div>
     <!-- JavaScript -->
     <script src="{% static 'assets/vendors/jquery/jquery.js' %}"></script>
