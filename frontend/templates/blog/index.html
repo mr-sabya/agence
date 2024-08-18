@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Inner Banner html start-->
+{% include 'partials/banner.html' with title=title %}
+<!-- Inner Banner html end-->
+
+<!-- blog archive start -->
+<div class="archive-section blog-archive">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 primary right-sidebar">
+                <!-- blog post item html start -->
+                <div class="grid blog-inner row">
+
+                    <div class="grid-item col-md-6">
+                        <article class="post">
+                            <figure class="feature-image">
+                                <a href="single-blog.html">
+                                    <img src="{% static 'assets/img/agency-img16.jpg' %}" alt="">
+                                </a>
+                                <span class="cat-meta">
+                                    <a href="single-post.html">MANAGEMENT</a>
+                                </span>
+                            </figure>
+                            <div class="entry-content">
+                                <h4>
+                                    <a href="single-blog.html">Maxime rhoncus aliquet sint eu accusantium illum.</a>
+                                </h4>
+                                <p>
+                                    Malesuada error laudantium quibusdam, voluptas recusandae, corporis nec, metus numquam, facilis, nascetur? Itaque mus
+                                </p>
+                                <div class="readmore-btn">
+                                    <a href="single-blog.html">LEARN MORE..</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    
+                </div>
+                <!-- blog post item html end -->
+                <!-- pagination html start-->
+                <div class="post-navigation-wrap">
+                    <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-arrow-left"></i>
+                                </a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">..</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- pagination html start-->
+            </div>
+            <div class="col-lg-4 secondary ps-lg-4">
+                {% include 'partials/blog-sidebar.html' %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- blog archive end -->
+
+{% endblock %}
