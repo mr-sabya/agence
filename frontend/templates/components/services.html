@@ -1,0 +1,53 @@
+<div class="types-of-duty">
+    {% for service in services %}
+
+    <div class="service-type">
+        <div class="overlay75"></div>
+        <div class="service-icon">
+            <i aria-hidden="true" class="{{ service.icon }}"></i>
+        </div>
+        <h5 class="service-title">
+            {{ service.title }}
+        </h5>
+    </div>
+
+    {% empty %}
+
+    <div class="service-type">
+        <div class="overlay75"></div>
+        <div class="service-icon">
+            <i aria-hidden="true" class="icon icon-chart2"></i>
+        </div>
+        <h5 class="service-title">
+            Website Development
+        </h5>
+    </div>
+    <div class="service-type">
+        <div class="overlay75"></div>
+        <div class="service-icon">
+            <i aria-hidden="true" class="icon icon-design"></i>
+        </div>
+        <h5 class="service-title">
+            Graphic & Sketch Designing
+        </h5>
+    </div>
+    <div class="service-type">
+        <div class="overlay75"></div>
+        <div class="service-icon">
+            <i aria-hidden="true" class="icon icon-Document-Search"></i>
+        </div>
+        <h5 class="service-title">
+            SEO & Content Writing
+        </h5>
+    </div>
+    <div class="service-type">
+        <div class="overlay75"></div>
+        <div class="service-icon">
+            <i aria-hidden="true" class="icon icon-api_setup"></i>
+        </div>
+        <h5 class="service-title">
+            Digital Market Planning
+        </h5>
+    </div>
+    {% endfor %}
+</div>

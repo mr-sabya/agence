@@ -20,6 +20,8 @@ class Portfolio_Technology(admin.TabularInline):
     
 class PortfolioAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug' : ('title', )}
+    list_display = ['title', 'slug']
+    list_filter = ["title", "category"]
     inlines = (Portfolio_Image, Portfolio_Technology)
     
     

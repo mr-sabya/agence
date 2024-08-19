@@ -1,0 +1,142 @@
+{% load static %}
+
+
+<section class="service-section">
+    <div class="service-inner-wrap">
+        <div class="container">
+            <div class="overlay"></div>
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+
+                    {% if service_section %}
+                    <div class="section-head white-section-head">
+                        <div class="divider-wrapper">
+                            <span class="title-divider">
+                                <span class="top-title">{{ service_section.sub_heading }}</span>
+                            </span>
+                        </div>
+                        <h2 class="section-title">
+                            {{ service_section.heading | safe }}
+                        </h2>
+                        <div class="section-disc">
+                            <p>
+                                {{ service_section.text }}
+                            </p>
+                            <div class="service-list">
+                                <ul>
+                                    {% for feature in service_section.servicefeature_set.all %}
+                                    <li>
+                                        <i class="far fa-dot-circle"></i>
+                                        <span class="dot-list-text">{{ feature.text }}</span>
+                                    </li>
+                                    {% endfor %}
+
+                                </ul>
+                            </div>
+                            <div class="author-content d-flex align-items-center justify-content-between">
+                                <div class="service-tag d-flex align-items-center">
+                                    <figure class="author-img">
+                                        <img src="{% static 'assets/img/agency-img18.jpg' %}" alt="">
+                                    </figure>
+                                    <div>
+                                        <h5 class="author-name">George Smith</h5>
+                                        <span class="tag-discription">CEO, Director</span>
+                                    </div>
+                                </div>
+                                <div class="servicebtn">
+                                    <div>
+                                        <a href="service.html" class="button-round-primary">More service</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="section-head white-section-head">
+                        <div class="divider-wrapper">
+                            <span class="title-divider">
+                                <span class="top-title">SERVICE LIST</span>
+                            </span>
+                        </div>
+                        <h2 class="section-title">
+                            <span class="title-highlight">Services</span>
+                            We Can Help You With !
+                        </h2>
+                        <div class="section-disc">
+                            <p>
+                                Vero id posuere tempus aspernatur quaerat mollis voluptatum eveniet porro
+                                viverra libero habitasse porro fames quos pharetra diam cupidatat ligula!
+                                Netus! Quos dignissi.
+                            </p>
+                            <div class="service-list">
+                                <ul>
+                                    <li>
+                                        <i class="far fa-dot-circle"></i>
+                                        <span class="dot-list-text">Nobis ridiculus cupiditate egestas
+                                            commodi.</span>
+                                    </li>
+                                    <li>
+                                        <i class="far fa-dot-circle"></i>
+                                        <span class="dot-list-text">Ipsum dui curabitur dapibuish
+                                            mollitia.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="author-content d-flex align-items-center justify-content-between">
+                                <div class="service-tag d-flex align-items-center">
+                                    <figure class="author-img">
+                                        <img src="{% static 'assets/img/agency-img18.jpg' %}" alt="">
+                                    </figure>
+                                    <div>
+                                        <h5 class="author-name">George Smith</h5>
+                                        <span class="tag-discription">CEO, Director</span>
+                                    </div>
+                                </div>
+                                <div class="servicebtn">
+                                    <div>
+                                        <a href="service.html" class="button-round-primary">More service</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+
+                    
+                </div>
+                <div class="col-lg-7">
+                    {% include 'components/services.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="service-item-inner">
+        <div class="container">
+            <div class="service-contact-wrapper primary-bg ">
+                <div class="contact-package col-xl-5 col-lg-5 col-md-12">
+                    <div class="contact-number-tag d-flex align-items-center">
+                        <figure class="contact-icon">
+                            <span class="icon-outer-circle">
+                                <i aria-hidden="true" class="icon icon-phone-call2"></i>
+                            </span>
+                        </figure>
+                        <div class="contact-detail-tag">
+                            <h6>GET A FREE CONSULTATION</h6>
+                            <span>987 233 0000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contct-info col-xl-4 col-lg-4 col-md-12">
+                    <p>
+                        Vero id posuere tempus aspernatur quaerat mollis voluptatum eveniet porro viverra
+                        libero habitasse Aut ab nibh aliqua optio veniet porro.
+                    </p>
+                </div>
+                <div class="contactbtn col-xl-3 col-lg-3 col-md-12">
+                    <a href="#contact-section" class="button-round-white">MAKE APPOINTMENT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
