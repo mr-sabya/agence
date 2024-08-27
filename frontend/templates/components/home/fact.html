@@ -1,0 +1,48 @@
+<section class="fact-section">
+    <div class="fact-overlay"></div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="fact-item-wrap d-flex flex-wrap justify-content-center">
+                    <div class="circle-overlay"></div>
+                    <div class="fact-section-head">
+                        <div class="divider-wrapper">
+                            <span class="title-divider">
+                                <span class="top-title">{{ goal_section.sub_heading }}</span>
+                            </span>
+                        </div>
+                        <h2 class="section-title">
+                            <span class="title-highlight"> {{ goal_section.highlight_heading }} </span>
+                            {{ goal_section.heading }}
+                        </h2>
+                        <div class="section-disc">
+                            <p>
+                                {{ goal_section.text }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="achivement-wrapper ">
+                    {% for counter in goal_section.goalcounter_set.all %}
+                    <div class="goal-wrapper">
+                        <div class="circle-progressbar" data-animate="false">
+                            <div class="circle-bar" data-percent="{{ counter.counter }}">
+                                <div class="circle-number"></div>
+                                <div class="goal">
+                                    <h4>{{ counter.title }}</h4>
+                                    <span>
+                                        {{ counter.text }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</section>

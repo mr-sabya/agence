@@ -1,0 +1,30 @@
+{% load static %}
+
+<section class="home-banner" style="background-image: url({{ HTTP_HOST }}/media/{{ banner.image }});">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="banner-content text-center">
+                    <div class="section-head">
+                        <div class="divider-wrapper">
+                            <span class="title-divider">
+                                <span class="top-title">{{ banner.sub_heading }}</span>
+                            </span>
+                        </div>
+                        <h2 class="section-title banner-title">
+                           <span class="title-highlight">{{ banner.highlight_heading }}</span> {{ banner.heading | safe }}
+                        </h2>
+                    </div>
+                    <div class="banner-text">
+                        <p>{{ banner.text }}</p>
+                    </div>
+                    <div class="banner-button">
+                        <a href="about-us.html" class="button-round-primary">{{ banner.button_1_text }}</a>
+                        <a href="career-2.html" class="button-round-white">{{ banner.button_2_text }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</section>

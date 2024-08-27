@@ -4,78 +4,18 @@
 {% block content %}
 
 <!-- home banner section html start -->
- {% include 'components/banner.html' %}
- <!-- home banner section html end -->
- 
- <!-- home service section html start -->
- {% include 'components/service.html' %}
+{% include 'components/home/banner.html' %}
+<!-- home banner section html end -->
+
+<!-- home service section html start -->
+{% include 'components/home/service.html' %}
 <!-- home service section html end -->
 
 <!-- home about section html start -->
-<section class="about-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="section-about-left about-image-wrap d-flex flex-wrap">
-                    <div class="home-about-image left-image">
-                        <img src="{% static 'assets/img/agency-img16-500.jpg' %}" alt="">
-                        <div class="video-button">
-                            <a id="video-container-two" data-video-id="IUN664s7N-c">
-                                <i class="fas fa-play"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="home-about-image right-image"><img src="{% static 'assets/img/agency-img2.jpg' %}" alt="">
-                    </div>
-                    <div class="home-about-image bottom-image">
-                        <img src="{% static 'assets/img/agency-img15-800x533.jpg' %}" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="section-about-right">
-                    <div class="section-about-content">
-                        <div class="section-head">
-                            <div class="divider-wrapper">
-                                <span class="title-divider">
-                                    <span class="top-title">ABOUT US</span>
-                                </span>
-                            </div>
-                            <h2 class="section-title">
-                                <span class="title-highlight">Introduction </span>
-                                To Best Digital Agency!
-                            </h2>
-                            <div class="section-disc">
-                                <p>
-                                    Sint nascetur facere, delectus conubia consequuntur, nonummy distinctio!
-                                    Non officiis, id natus non nisl provident justo.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="about-list">
-                            <ul>
-                                <li>Praesentium voluptatum dolores</li>
-                                <li>Cillum nullam rem volutpat earum.</li>
-                                <li>Odio doloribus lacus quaerat assum.</li>
-                                <li>Natoque, cubilia eos ipsa, vehicula.</li>
-                                <li>Cillum nullam rem volutpat earum.</li>
-                                <li>Odio doloribus lacus quaerat assum.</li>
-                            </ul>
-                            <div class="exp-date">
-                                <h2>24</h2>
-                                <h4>YEARS</h4>
-                                <span class="date-decs">OF EXPERIENCE</span>
-                            </div>
-                        </div>
-                        <div class="aboutbtn">
-                            <a href="about-us.html" class="button-round-primary">MORE ABOUT US</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{% include 'components/home/about.html' %}
+<!-- home about section html end -->
+
+
 <!-- home client section html start -->
 <div class="client-section">
     <div class="container">
@@ -114,79 +54,9 @@
     </div>
 </div>
 <!-- home fact section html start -->
-<section class="fact-section">
-    <div class="fact-overlay"></div>
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <div class="fact-item-wrap d-flex flex-wrap justify-content-center">
-                    <div class="circle-overlay"></div>
-                    <div class="fact-section-head">
-                        <div class="divider-wrapper">
-                            <span class="title-divider">
-                                <span class="top-title">OUR GOAL</span>
-                            </span>
-                        </div>
-                        <h2 class="section-title">
-                            <span class="title-highlight"> Mission </span>
-                            We Aim For You!
-                        </h2>
-                        <div class="section-disc">
-                            <p>
-                                Sint nascetur facere, delectus conubia consequuntur, nonummy distinctio
-                                justo.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="achivement-wrapper ">
-                    <div class="goal-wrapper">
-                        <div class="circle-progressbar" data-animate="false">
-                            <div class="circle-bar" data-percent="95">
-                                <div class="circle-number"></div>
-                                <div class="goal">
-                                    <h4>Marketing</h4>
-                                    <span>
-                                        Porro tincidunt duis tincidunt nostrum fais.
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="goal-wrapper">
-                        <div class="circle-progressbar" data-animate="false">
-                            <div class="circle-bar" data-percent="90">
-                                <div class="circle-number"></div>
-                                <div class="goal">
-                                    <h4>Solution</h4>
-                                    <span>
-                                        Porro tincidunt duis tincidunt nostrum fais.
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="goal-wrapper">
-                        <div class="circle-progressbar" data-animate="false">
-                            <div class="circle-bar" data-percent="96">
-                                <div class="circle-number"></div>
-                                <div class="goal">
-                                    <h4>Success</h4>
-                                    <span>
-                                        Porro tincidunt duis tincidunt nostrum fais.
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="overlay"></div>
-</section>
+{% include 'components/home/fact.html' %}
+<!-- home fact section html end -->
+
 <!-- home gallery section html start -->
 <section class="gallery-section">
     <div class="container">
@@ -329,7 +199,7 @@
 <!-- home team section html start -->
 {% include 'partials/team.html' %}
 <!-- home team section html end -->
- 
+
 <!-- home testimonial section html start -->
 <section class="testimonial-section ">
     <div class="container">
@@ -437,7 +307,8 @@
     <div class="pattern-overlay"></div>
 </section>
 <!-- home contact section html start -->
-<section class="contact-section" id="contact-section" style="background-image: url({% static 'assets/img/agency-img29.jpg' %});">
+<section class="contact-section" id="contact-section"
+    style="background-image: url({% static 'assets/img/agency-img29.jpg' %});">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-4">
