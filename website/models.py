@@ -3,8 +3,10 @@ from django.utils.safestring import mark_safe
 
 # Create your models here.
 
-#================================================================================
+# ================================================================================
 # banner model start
+
+
 class Banner(models.Model):
     sub_heading = models.CharField(max_length=255)
     highlight_heading = models.CharField(max_length=15, null=True, blank=True)
@@ -30,10 +32,10 @@ class Banner(models.Model):
         self.image.delete()
         super(Banner, self).delete(*args, **kwargs)
 # banner model end
-#================================================================================
+# ================================================================================
 
 
-#================================================================================
+# ================================================================================
 # service section model start
 class ServiceSection(models.Model):
     sub_heading = models.CharField(max_length=20)
@@ -57,12 +59,11 @@ class ServiceFeature(models.Model):
     service_section = models.ForeignKey(
         ServiceSection, on_delete=models.CASCADE)
     text = models.CharField(max_length=100)
-    
 # service section model end
-#================================================================================
+# ================================================================================
 
 
-#================================================================================
+# ================================================================================
 # service model start
 class Service(models.Model):
     title = models.CharField(max_length=255)
@@ -71,10 +72,10 @@ class Service(models.Model):
     def __str__(self):
         return self.title
 # service model end
-#================================================================================
- 
+# ================================================================================
 
-#================================================================================
+
+# ================================================================================
 # about us section model start
 class AboutSection(models.Model):
     sub_heading = models.CharField(max_length=15)
@@ -108,12 +109,11 @@ class AboutFeature(models.Model):
 
     def __str__(self):
         return self.text
-    
 # about us section model end
-#================================================================================
+# ================================================================================
 
 
-#================================================================================
+# ================================================================================
 # goal section model start
 class GoalSection(models.Model):
     sub_heading = models.CharField(max_length=15)
@@ -127,7 +127,6 @@ class GoalSection(models.Model):
     class Meta:
         verbose_name = "Goal Section"
         verbose_name_plural = "Goal Section"
-        
 
 
 class GoalCounter(models.Model):
@@ -138,6 +137,5 @@ class GoalCounter(models.Model):
 
     def __str__(self):
         return self.text
-    
 # goal section model end
-#================================================================================
+# ================================================================================
