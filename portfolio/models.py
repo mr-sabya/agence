@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 
@@ -21,6 +22,9 @@ class Category(models.Model):
 class Technology(models.Model):
     name = models.CharField(max_length=255)
     image = models.ImageField(upload_to='images/tech/', blank=True, null=True)
+    
+    def __str__(self):
+        return self.name
 # ========================= Technology member model end =========================
 # ================================================================================
 
@@ -33,15 +37,22 @@ class Portfolio(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     thumbnail = models.ImageField(upload_to='images/')
     image = models.ImageField(upload_to='images/')
-    description = models.TextField()
+    description = RichTextUploadingField()
     technologies = models.ManyToManyField(Technology)
+    
+    def __str__(self) -> str:
+        return self.title
 # ================================================================================
 
 
 # ================================================================================
 class PortfolioImage(models.Model):
     portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255, null=True)
     image = models.ImageField(upload_to='images/')
+    
+    def __str__(self) -> str:
+        return self.title
 # ================================================================================
 
 
@@ -50,6 +61,9 @@ class PortfolioImage(models.Model):
 # ========================= designation member model start =======================
 class Degisnation(models.Model):
     name = models.CharField(max_length=255)
+    
+    def __str__(self) -> str:
+        return self.name
 # ========================= designation member model end =========================
 # ================================================================================
 
@@ -68,6 +82,9 @@ class TeamMember(models.Model):
     twitter = models.CharField(max_length=255)
     linkedin = models.CharField(max_length=255)
     instagram = models.CharField(max_length=255)
+    
+    def __str__(self) -> str:
+        return self.name
     
     
 # ================================================================================

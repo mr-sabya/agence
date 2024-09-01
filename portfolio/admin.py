@@ -37,6 +37,7 @@ class Team_Member_Skill(admin.TabularInline):
     
 class TeamMemberAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug' : ('name', )}
+    list_display = ['name', 'designation']
     inlines = (Team_Member_Qualification, Team_Member_Experience, Team_Member_Skill)
     
     

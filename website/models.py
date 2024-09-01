@@ -114,7 +114,7 @@ class AboutFeature(models.Model):
 
 
 # ================================================================================
-# goal section model start
+# goal section model start========================================================
 class GoalSection(models.Model):
     sub_heading = models.CharField(max_length=15)
     highlight_heading = models.CharField(max_length=15)
@@ -137,5 +137,41 @@ class GoalCounter(models.Model):
 
     def __str__(self):
         return self.text
-# goal section model end
+# goal section model end==========================================================
+# ================================================================================
+
+
+# ================================================================================
+# team section model start========================================================
+class TeamSection(models.Model):
+    sub_heading = models.CharField(max_length=15)
+    highlight_heading = models.CharField(max_length=15)
+    heading = models.CharField(max_length=100)
+    text = models.TextField(max_length=255)
+
+    def __str__(self):
+        return self.highlight_heading + ' '+self.heading
+
+    class Meta:
+        verbose_name = "Team Section"
+        verbose_name_plural = "Team Section"
+# team section model end==========================================================
+# ================================================================================
+
+
+# ================================================================================
+# portfolio section model start========================================================
+class PortfolioSection(models.Model):
+    sub_heading = models.CharField(max_length=15)
+    highlight_heading = models.CharField(max_length=15)
+    heading = models.CharField(max_length=100)
+    text = models.TextField(max_length=255)
+
+    def __str__(self):
+        return self.highlight_heading + ' '+self.heading
+
+    class Meta:
+        verbose_name = "Portfolio Section"
+        verbose_name_plural = "Portfolio Section"
+# portfolio section model end==========================================================
 # ================================================================================

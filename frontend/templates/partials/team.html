@@ -25,37 +25,38 @@
         </div>
         <div class="group-member">
             <div class="row">
+                {% for team in teams %}
                 <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 p-3 pb-0">
                     <div class="team-item">
                         <figure class="team-img">
-                            <img src="{% static 'assets/img/agency-img11.jpg' %}" alt="">
+                            <img src="{{ HTTP_HOST }}/media/{{ team.image }}" alt="">
                         </figure>
                         <div class="team-content">
                             <h4>
-                                <a href="team-detail.html">Sony Madison</a>
+                                <a href="team-detail.html">{{ team.name }}</a>
                             </h4>
-                            <span>CEO, Director</span>
+                            <span>{{ team.designation }}</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="header-social social-links team-social-link">
                                 <ul>
                                     <li>
-                                        <a href="https://www.facebook.com/">
-                                            <i class="fab fa-facebook"></i>
+                                        <a href="{{ team.facebook }}" target="_blank">
+                                            <i class="fab fa-facebook-f"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://twitter.com/?lang=en">
+                                        <a href="{{ team.twitter }}" target="_blank">
                                             <i class="fab fa-twitter"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.youtube.com/">
-                                            <i class="fab fa-youtube"></i>
+                                        <a href="{{ team.linkedin }}" target="_blank">
+                                            <i class="fab fa-linkedin-in"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.instagram.com/">
+                                        <a href="{{ team.instagram }}" target="_blank">
                                             <i class="fab fa-instagram"></i>
                                         </a>
                                     </li>
@@ -64,123 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 p-3 pb-0">
-                    <div class="team-item">
-                        <figure class="team-img">
-                            <img src="{% static 'assets/img/agency-img9.jpg' %}" alt="">
-                        </figure>
-                        <div class="team-content">
-                            <h4>
-                                <a href="team-detail.html">Hary Warth</a>
-                            </h4>
-                            <span>Head Manager</span>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="header-social social-links team-social-link">
-                                <ul>
-                                    <li>
-                                        <a href="https://www.facebook.com/">
-                                            <i class="fab fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://twitter.com/?lang=en">
-                                            <i class="fab fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.youtube.com/">
-                                            <i class="fab fa-youtube"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.instagram.com/">
-                                            <i class="fab fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 p-3 pb-0">
-                    <div class="team-item">
-                        <figure class="team-img">
-                            <img src="{% static 'assets/img/agency-img12.jpg' %}" alt="">
-                        </figure>
-                        <div class="team-content">
-                            <h4>
-                                <a href="team-detail.html">Jenny Hobb</a>
-                            </h4>
-                            <span>Branch Manager</span>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="header-social social-links team-social-link">
-                                <ul>
-                                    <li>
-                                        <a href="https://www.facebook.com/">
-                                            <i class="fab fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://twitter.com/?lang=en">
-                                            <i class="fab fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.youtube.com/">
-                                            <i class="fab fa-youtube"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.instagram.com/">
-                                            <i class="fab fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 p-3 pb-0">
-                    <div class="team-item">
-                        <figure class="team-img">
-                            <img src="{% static 'assets/img/agency-img10.jpg' %}" alt="">
-                        </figure>
-                        <div class="team-content">
-                            <h4>
-                                <a href="team-detail.html">Johny Smith</a>
-                            </h4>
-                            <span>Supervisor</span>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="header-social social-links team-social-link">
-                                <ul>
-                                    <li>
-                                        <a href="https://www.facebook.com/">
-                                            <i class="fab fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://twitter.com/?lang=en">
-                                            <i class="fab fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.youtube.com/">
-                                            <i class="fab fa-youtube"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.instagram.com/">
-                                            <i class="fab fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

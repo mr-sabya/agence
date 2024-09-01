@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Service, Banner, ServiceSection, ServiceFeature, AboutSection, AboutFeature, GoalSection, GoalCounter
+from .models import Service, Banner, ServiceSection, ServiceFeature, AboutSection, AboutFeature, GoalSection, GoalCounter, TeamSection, PortfolioSection
 # Register your models here.
 
 
@@ -10,6 +10,9 @@ class bannerAdmin(admin.ModelAdmin):
             # If an instance exists, return False to disable the "Add" button
             return False
         return True
+
+    def has_delete_permission(self, request, obj=None):
+        return False
     
     
 
@@ -28,6 +31,9 @@ class ServiceSectionAdmin(admin.ModelAdmin):
             # If an instance exists, return False to disable the "Add" button
             return False
         return True
+    
+    def has_delete_permission(self, request, obj=None):
+        return False
     
     
 #for about section
@@ -65,9 +71,39 @@ class goalSectionAdmin(admin.ModelAdmin):
         return False
     
     
+    
+#team section
+class teamSectionAdmin(admin.ModelAdmin):
+    def has_add_permission(self, request):
+        # Check if there are already any instances of this model
+        if TeamSection.objects.exists():
+            # If an instance exists, return False to disable the "Add" button
+            return False
+        return True
+    
+    def has_delete_permission(self, request, obj=None):
+        return False
+    
+
+    
+#portfolio section
+class portfolioSectionAdmin(admin.ModelAdmin):
+    def has_add_permission(self, request):
+        # Check if there are already any instances of this model
+        if PortfolioSection.objects.exists():
+            # If an instance exists, return False to disable the "Add" button
+            return False
+        return True
+    
+    def has_delete_permission(self, request, obj=None):
+        return False
+    
+    
 
 admin.site.register(Service)
 admin.site.register(ServiceSection, ServiceSectionAdmin)
 admin.site.register(Banner, bannerAdmin)
 admin.site.register(AboutSection, aboutSectionAdmin)
 admin.site.register(GoalSection, goalSectionAdmin)
+admin.site.register(TeamSection, teamSectionAdmin)
+admin.site.register(PortfolioSection, portfolioSectionAdmin)
