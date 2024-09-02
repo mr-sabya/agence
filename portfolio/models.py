@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
@@ -38,6 +39,7 @@ class Portfolio(models.Model):
     thumbnail = models.ImageField(upload_to='images/')
     image = models.ImageField(upload_to='images/')
     description = RichTextUploadingField()
+    short_description = models.TextField(null=True, max_length=255)
     technologies = models.ManyToManyField(Technology)
     
     def __str__(self) -> str:
@@ -113,4 +115,21 @@ class Skill(models.Model):
 # ================================================================================
     
 # =========================== team member model end ==============================
+# ================================================================================
+
+
+# ================================================================================
+# =========================== testimonal model end ===============================
+class Testimonial(models.Model):
+    name = models.CharField(max_length=255)
+    designation = models.CharField(max_length=100)
+    company = models.CharField(max_length=100)
+    text = models.TextField(max_length=255)
+    image = models.ImageField(upload_to='images/client/')
+    rating = models.FloatField(validators=[MinValueValidator(1), MaxValueValidator(5)], help_text="1 to 5 i.e. 4/4.5/5")
+    percentage = models.IntegerField(default=100, help_text="'0.5 => 8', '1 => 15', '1.5 => 28', '2 => 35', '2.5 => 48', '3 => 55', '3.5 => 68', '4 => 80', '4.5 => 88', '5 => 100'")
+    
+    def __str__(self) -> str:
+        return self.name
+# =========================== testimonal model end ===============================
 # ================================================================================

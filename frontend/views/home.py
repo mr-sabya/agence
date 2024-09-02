@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
-from website.models import Banner, ServiceSection, Service, AboutSection, GoalSection, PortfolioSection
-from portfolio.models import TeamMember
+from website.models import Banner, ServiceSection, Service, AboutSection, GoalSection, PortfolioSection, TestimonialSection
+from portfolio.models import TeamMember, Portfolio, Testimonial
 
 
 def index(request):
@@ -30,16 +30,25 @@ def index(request):
         goal_section = GoalSection.objects.latest('id')
     except:
         goal_section = ''
-        
+    
     
     #portfolio section
     try:
         portfolio_section = PortfolioSection.objects.latest('id')
     except:
         portfolio_section = ''
+        
     
-    services = Service.objects.order_by('id')
-    teams = TeamMember.objects.order_by('id')
+    #testimonial section
+    try:
+        testimonial_section = TestimonialSection.objects.latest('id')
+    except:
+        testimonial_section = ''
+    
+    services = Service.objects.order_by('id')[:4]
+    teams = TeamMember.objects.order_by('id')[:4]
+    projects = Portfolio.objects.order_by('id')[:6]
+    testimonials = Testimonial.objects.order_by('id')[:3]
 
     context = {
         'title': 'Home',
@@ -49,6 +58,9 @@ def index(request):
         'about_section': about_section,
         'goal_section': goal_section,
         'portfolio_section': portfolio_section,
-        'teams': teams
+        'projects': projects,
+        'teams': teams,
+        'testimonials': testimonials,
+        'testimonial_section': testimonial_section
     }
     return render(request, 'home/index.html', context)

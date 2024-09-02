@@ -3013,7 +3013,7 @@ input[type=submit]:focus {
   background-color: #292929;
 }
 .service-section .service-inner-wrap .overlay {
-  background-image: url("assets/img/agency-img3.png");
+  background-image: url("img/agency-img3.png");
   background-position: center center;
   background-repeat: repeat;
   opacity: 0.08;
@@ -3096,7 +3096,7 @@ input[type=submit]:focus {
   row-gap: 40px;
 }
 .service-section .types-of-duty .service-type {
-  background-image: url("assets/img/agency-img22.png");
+  background-image: url("img/agency-img22.png");
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 70% auto;
@@ -4017,7 +4017,7 @@ input[type=submit]:focus {
 }
 .fact-section .fact-overlay {
   background-color: #999999;
-  background-image: url("assets/img/agency-img3.png");
+  background-image: url("img/agency-img3.png");
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -4048,7 +4048,7 @@ input[type=submit]:focus {
 }
 .fact-section .fact-item-wrap .circle-overlay {
   position: absolute;
-  background-image: url("assets/img/agency-img21.png");
+  background-image: url("img/agency-img21.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -4175,7 +4175,7 @@ input[type=submit]:focus {
 }
 .testimonial-section .pattern-overlay {
   background-color: transparent;
-  background-image: url(assets/img/agency-img3.png);
+  background-image: url("img/agency-img3.png");
   background-repeat: no-repeat;
   background-position: center center;
   opacity: 0.05;
@@ -5947,7 +5947,7 @@ input[type=submit]:focus {
 }
 .site-footer .footer-overlay {
   background-color: transparent;
-  background-image: url(assets/img/agency-img3.png);
+  background-image: url("img/agency-img3.png");
   background-repeat: no-repeat;
   background-position: center center;
   opacity: 0.05;
@@ -6439,7 +6439,7 @@ input[type=submit]:focus {
   }
 }
 .diff-services-section .service-inner-wrap .types-of-benifit .service-type {
-  background-image: url("assets/img/agency-img22.png");
+  background-image: url("img/agency-img22.png");
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 70% auto;

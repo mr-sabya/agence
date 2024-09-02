@@ -1,0 +1,22 @@
+{% load static %}
+<div class="gallery-container">
+    {% for project in projects %}
+    <div class="single-gallery">
+        <figure class="gallery-img">
+            <a href="{{ HTTP_HOST }}/media/{{ project.thumbnail }}" data-fancybox="gallery">
+                <img src="{{ HTTP_HOST }}/media/{{ project.thumbnail }}" alt="">
+            </a>
+            <div class="facility-wrapper">
+                <div class="facility-content">
+                    <h4 class="facility-title">
+                        <a href="portfolio-detail.html">{{ project.title }}</a>
+                    </h4>
+                    <p class="facility-info">
+                        {{ project.short_description }}
+                    </p>
+                </div>
+            </div>
+        </figure>
+    </div>
+    {% endfor %}
+</div>

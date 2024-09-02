@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Service, Banner, ServiceSection, ServiceFeature, AboutSection, AboutFeature, GoalSection, GoalCounter, TeamSection, PortfolioSection
+from .models import TestimonialSection
 # Register your models here.
 
 
@@ -99,6 +100,19 @@ class portfolioSectionAdmin(admin.ModelAdmin):
         return False
     
     
+#testimonial section
+class testimonialSectionAdmin(admin.ModelAdmin):
+    def has_add_permission(self, request):
+        # Check if there are already any instances of this model
+        if TestimonialSection.objects.exists():
+            # If an instance exists, return False to disable the "Add" button
+            return False
+        return True
+    
+    def has_delete_permission(self, request, obj=None):
+        return False
+    
+    
 
 admin.site.register(Service)
 admin.site.register(ServiceSection, ServiceSectionAdmin)
@@ -107,3 +121,4 @@ admin.site.register(AboutSection, aboutSectionAdmin)
 admin.site.register(GoalSection, goalSectionAdmin)
 admin.site.register(TeamSection, teamSectionAdmin)
 admin.site.register(PortfolioSection, portfolioSectionAdmin)
+admin.site.register(TestimonialSection, testimonialSectionAdmin)

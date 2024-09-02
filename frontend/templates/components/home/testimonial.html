@@ -1,0 +1,60 @@
+{% load static %}
+<section class="testimonial-section ">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-5 col-lg-12">
+                <div class="section-head">
+                    <div class="divider-wrapper">
+                        <span class="title-divider">
+                            <span class="top-title">{{ testimonial_section.sub_heading }}</span>
+                        </span>
+                    </div>
+                    <h2 class="section-title">
+                        <span class="title-highlight">{{ testimonial_section.highlight_heading }} </span>
+                        {{ testimonial_section.heading }}
+                    </h2>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-12">
+                <div class="section-disc">
+                    {{ testimonial_section.text }}
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-12 d-flex justify-content-xl-end justify-content-center">
+                <a href="testimonial.html" class="button-round-white viewbtn">view more</a>
+            </div>
+        </div>
+        <div class="testimonial-inner">
+            <div class="row d-flex justify-content-center justify-content-xl-start">
+
+                {% for testimonial in testimonials %}
+                <div class="vow-item col-lg-4 col-md-6">
+                    <div class="testimonial-item">
+                        <figure class="testimonial-img">
+                            <img src="{% static 'assets/img/agency-img17.jpg' %}" alt="">
+                        </figure>
+                        <div class="testimonial-content">
+                            <div class="comment-info">
+                                <p>{{ testimonial.text }}</p>
+                            </div>
+                            <div class="author-content">
+                                <div class="author-info">
+                                    <h5 class="author-name">{{ testimonial.name }}</h5>
+                                    <span class="author-work">{{ testimonial.designation }}, {{ testimonial.company }}</span>
+                                </div>
+                                <div class="rating-start-wrap">
+                                    <div class="rating-start">
+                                        <span style="width: {{ testimonial.percentage }}%"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+    <div class="pattern-overlay"></div>
+</section>

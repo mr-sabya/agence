@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Category, Technology, Portfolio, PortfolioImage, Degisnation, TeamMember, Qualification, Experience, Skill
+from .models import Category, Technology, Portfolio, PortfolioImage, Degisnation, TeamMember, Qualification, Experience, Skill, Testimonial
 # Register your models here.
 
 
@@ -41,7 +41,11 @@ class TeamMemberAdmin(admin.ModelAdmin):
     inlines = (Team_Member_Qualification, Team_Member_Experience, Team_Member_Skill)
     
     
-    
+
+
+#testimonial model
+class testimonialAdmin(admin.ModelAdmin):
+    list_display = ['name', 'designation', 'company']
     
 
 #add category to admin panel
@@ -57,3 +61,6 @@ admin.site.register(Portfolio, PortfolioAdmin)
 #designation and team
 admin.site.register(Degisnation)
 admin.site.register(TeamMember, TeamMemberAdmin)
+
+#testimonial
+admin.site.register(Testimonial, testimonialAdmin)

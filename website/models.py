@@ -142,6 +142,24 @@ class GoalCounter(models.Model):
 
 
 # ================================================================================
+# portfolio section model start========================================================
+class PortfolioSection(models.Model):
+    sub_heading = models.CharField(max_length=15)
+    highlight_heading = models.CharField(max_length=15)
+    heading = models.CharField(max_length=100)
+    text = models.TextField(max_length=255)
+
+    def __str__(self):
+        return self.highlight_heading + ' '+self.heading
+
+    class Meta:
+        verbose_name = "Portfolio Section"
+        verbose_name_plural = "Portfolio Section"
+# portfolio section model end==========================================================
+# ================================================================================
+
+
+# ================================================================================
 # team section model start========================================================
 class TeamSection(models.Model):
     sub_heading = models.CharField(max_length=15)
@@ -160,8 +178,8 @@ class TeamSection(models.Model):
 
 
 # ================================================================================
-# portfolio section model start========================================================
-class PortfolioSection(models.Model):
+# testimonial section model start=================================================
+class TestimonialSection(models.Model):
     sub_heading = models.CharField(max_length=15)
     highlight_heading = models.CharField(max_length=15)
     heading = models.CharField(max_length=100)
@@ -171,7 +189,8 @@ class PortfolioSection(models.Model):
         return self.highlight_heading + ' '+self.heading
 
     class Meta:
-        verbose_name = "Portfolio Section"
-        verbose_name_plural = "Portfolio Section"
-# portfolio section model end==========================================================
+        verbose_name = "Testimonial Section"
+        verbose_name_plural = "Testimonial Section"
+# testimonial section model end===================================================
 # ================================================================================
+
