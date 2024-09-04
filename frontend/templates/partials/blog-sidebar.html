@@ -1,62 +1,21 @@
 {% load static %}
 
 <div class="sidebar">
-    <aside class="widget author_widget">
+    <aside class="widget">
         <div class="divider-wrapper">
             <span class="title-divider">
-                <span class="top-title">ABOUT DIRECTOR</span>
+                <span class="top-title">CATEGORIES</span>
             </span>
         </div>
-        <div class="widget-content text-center">
-            <div class="profile">
-                <figure class="avatar">
-                    <a href="#">
-                        <img src="{% static 'assets/img/agency-img20.jpg' %}" alt="">
-                    </a>
-                </figure>
-                <div class="text-content">
-                    <div class="name-title">
-                        <h5>
-                            <a href="#">William Wright</a>
-                        </h5>
-                    </div>
-                    <p>
-                        Ultricies augue sem fermentum deleniti ac odio curabitur, dolore mus corporis nisl. Class alias
-                        lorem omnis numquam ipsum.
-                    </p>
-                </div>
-                <div class="socialgroup">
-                    <ul>
-                        <li>
-                            <a target="_blank" href="https://www.facebook.com/">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="https://www.google.com/">
-                                <i class="fab fa-google"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="https://www.twitter.com/">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="https://www.instagram.com/">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="https://www.pinterest.com/">
-                                <i class="fab fa-pinterest"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <div class="widget-content">
+            <ul class="category">
+                {% for category in categories %}
+                <li><a href="#">{{ category.title }}</a> <span>({{ category.posts_count }})</span></li>
+                {% endfor %}
+            </ul>
         </div>
     </aside>
+
     <aside class="widget widget_latest_post widget-post-thumb">
         <div class="divider-wrapper">
             <span class="title-divider">
@@ -64,26 +23,26 @@
             </span>
         </div>
         <ul>
-
+            {% for recent_post in recent_posts %}
             <li>
                 <figure class="post-thumb">
-                    <a href="single-blog.html"><img src="{% static 'assets/img/agency-img13.jpg' %}" alt=""></a>
+                    <a href="single-blog.html"><img src="{{ HTTP_HOST }}/media/{{ recent_post.thumbnail }}" alt=""></a>
                 </figure>
                 <div class="post-content">
                     <h5>
-                        <a href="single-blog.html">Tellus sapien viverra posuere dolores archit.</a>
+                        <a href="single-blog.html">{{ recent_post.title }}</a>
                     </h5>
                     <div class="entry-meta">
                         <span class="byline">
-                            <a href="single-blog.html">Demoteam</a>
+                            <a href="single-blog.html">{{ recent_post.category }}</a>
                         </span>
                         <span class="posted-on">
-                            <a href="single-blog.html">August 17, 2022</a>
+                            <small>{{ recent_post.created_at | date:'d M, Y' }}, {{ recent_post.created_at | timesince }} ago</small>
                         </span>
                     </div>
                 </div>
             </li>
-            
+            {% endfor %}
         </ul>
     </aside>
     <aside class="widget widget_social">

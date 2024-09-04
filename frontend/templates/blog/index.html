@@ -14,23 +14,23 @@
             <div class="col-lg-8 primary right-sidebar">
                 <!-- blog post item html start -->
                 <div class="grid blog-inner row">
-
+                    {% for post in posts %}
                     <div class="grid-item col-md-6">
                         <article class="post">
                             <figure class="feature-image">
-                                <a href="single-blog.html">
-                                    <img src="{% static 'assets/img/agency-img16.jpg' %}" alt="">
+                                <a href="{% url 'blog.show' post.slug %}">
+                                    <img src="{{ HTTP_HOST }}/media/{{ post.thumbnail }}" alt="">
                                 </a>
                                 <span class="cat-meta">
-                                    <a href="single-post.html">MANAGEMENT</a>
+                                    <a href="single-post.html">{{ post.category }}</a>
                                 </span>
                             </figure>
                             <div class="entry-content">
                                 <h4>
-                                    <a href="single-blog.html">Maxime rhoncus aliquet sint eu accusantium illum.</a>
+                                    <a href="{% url 'blog.show' post.slug %}">{{ post.title }}</a>
                                 </h4>
                                 <p>
-                                    Malesuada error laudantium quibusdam, voluptas recusandae, corporis nec, metus numquam, facilis, nascetur? Itaque mus
+                                    {{ post.short_description }}
                                 </p>
                                 <div class="readmore-btn">
                                     <a href="single-blog.html">LEARN MORE..</a>
@@ -38,7 +38,7 @@
                             </div>
                         </article>
                     </div>
-                    
+                    {% endfor %}
                 </div>
                 <!-- blog post item html end -->
                 <!-- pagination html start-->

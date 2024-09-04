@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'frontend',
     'website',
     'portfolio',
+    'blog',
 
 ]
 

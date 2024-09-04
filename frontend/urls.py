@@ -11,4 +11,5 @@ urlpatterns = [
     # portfolio.show
     
     path('blog', blog.index, name='blog.index'),
+    path('blog/<str:slug>', blog.show, name='blog.show'),
 ]
