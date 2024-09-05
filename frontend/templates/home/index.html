@@ -274,71 +274,39 @@
         </div>
         <div class="blog-inner">
             <div class="row d-flex justify-content-center justify-content-xl-start">
+                {% for post in posts %}
                 <div class="col-md-6 col-lg-4 pe-sm-4 ps-sm-4 pe-3 ps-3">
                     <article class="post">
                         <figure class="feature-image">
                             <a href="single-blog.html">
-                                <img src="{% static 'assets/img/agency-img16.jpg' %}" alt="">
+                                <img src="{{ HTTP_HOST }}/media/{{ post.thumbnail }}" alt="">
                             </a>
                             <span class="cat-meta">
-                                <a href="single-post.html">MANAGEMENT</a>
+                                <a href="{% url 'blog.show' post.slug %}">{{ post.category }}</a>
                             </span>
                         </figure>
                         <div class="entry-content">
                             <h4>
-                                <a href="single-blog.html">Maxime rhoncus aliquet sint eu accusantium
-                                    illum.</a>
+                                <a href="{% url 'blog.show' post.slug %}">{{ post.title }}</a>
                             </h4>
                             <p>
-                                Malesuada error laudantium quibusdam, voluptas recusandae, corporis nec,
-                                metus numquam, facilis, nascetur?
+                                {{ post.short_description | truncatechars:80 }}
                             </p>
+                            <div class="readmore-btn">
+                                <a href="single-blog.html">LEARN MORE..</a>
+                            </div>
                         </div>
+
                     </article>
                 </div>
-                <div class="col-md-6 col-lg-4 ps-sm-4 pe-sm-4 pe-3 ps-3">
-                    <article class="post">
-                        <figure class="feature-image">
-                            <a href="single-blog.html">
-                                <img src="{% static 'assets/img/agency-img15.jpg' %}" alt="">
-                            </a>
-                            <span class="cat-meta">
-                                <a href="single-post.html">BUSINESS</a>
-                            </span>
-                        </figure>
-                        <div class="entry-content">
-                            <h4>
-                                <a href="single-blog.html">Cursus egestas tristique viverra cum harum,
-                                    ulla.</a>
-                            </h4>
-                            <p>
-                                Malesuada error laudantium quibusdam, voluptas recusandae, corporis nec,
-                                metus numquam, facilis, nascetur?
-                            </p>
-                        </div>
-                    </article>
+                {% empty %}
+                <div class="col-md-12">
+                    <h4>No Posts Found!!</h4>
                 </div>
-                <div class="col-md-6 col-lg-4 ps-sm-4 pe-sm-4 pe-3 ps-3">
-                    <article class="post">
-                        <figure class="feature-image">
-                            <a href="single-blog.html">
-                                <img src="{% static 'assets/img/agency-img14.jpg' %}" alt="">
-                            </a>
-                            <span class="cat-meta">
-                                <a href="single-post.html">MANAGEMENT</a>
-                            </span>
-                        </figure>
-                        <div class="entry-content">
-                            <h4>
-                                <a href="single-blog.html">Felis platea eget justo, esse cumque dolorum.</a>
-                            </h4>
-                            <p>
-                                Malesuada error laudantium quibusdam, voluptas recusandae, corporis nec,
-                                metus numquam, facilis, nascetur?
-                            </p>
-                        </div>
-                    </article>
-                </div>
+
+                {% endfor %}
+
+
             </div>
         </div>
     </div>

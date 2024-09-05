@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 
-from .views import home, about, portfolio, blog;
+from .views import home, about, portfolio, blog, category;
 
 urlpatterns = [
     path('', home.index, name='index'),
@@ -12,4 +12,6 @@ urlpatterns = [
     
     path('blog', blog.index, name='blog.index'),
     path('blog/<str:slug>', blog.show, name='blog.show'),
+    
+    path('category/<str:slug>', category.show, name='category.show'),
 ]

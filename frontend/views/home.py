@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from website.models import Banner, ServiceSection, Service, AboutSection, GoalSection, PortfolioSection, TestimonialSection
 from portfolio.models import TeamMember, Portfolio, Testimonial
+from blog.models import Post
 
 
 def index(request):
@@ -49,6 +50,7 @@ def index(request):
     teams = TeamMember.objects.order_by('id')[:4]
     projects = Portfolio.objects.order_by('id')[:6]
     testimonials = Testimonial.objects.order_by('id')[:3]
+    posts = Post.objects.order_by('id')[:3]
 
     context = {
         'title': 'Home',
@@ -61,6 +63,7 @@ def index(request):
         'projects': projects,
         'teams': teams,
         'testimonials': testimonials,
-        'testimonial_section': testimonial_section
+        'testimonial_section': testimonial_section,
+        'posts': posts
     }
     return render(request, 'home/index.html', context)

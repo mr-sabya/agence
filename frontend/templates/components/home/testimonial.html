@@ -31,7 +31,7 @@
                 <div class="vow-item col-lg-4 col-md-6">
                     <div class="testimonial-item">
                         <figure class="testimonial-img">
-                            <img src="{% static 'assets/img/agency-img17.jpg' %}" alt="">
+                            <img src="{{ HTTP_HOST }}/media/{{ testimonial.image }}" alt="">
                         </figure>
                         <div class="testimonial-content">
                             <div class="comment-info">
@@ -40,7 +40,8 @@
                             <div class="author-content">
                                 <div class="author-info">
                                     <h5 class="author-name">{{ testimonial.name }}</h5>
-                                    <span class="author-work">{{ testimonial.designation }}, {{ testimonial.company }}</span>
+                                    <span class="author-work">{{ testimonial.designation }},</span>
+                                    <span class="author-work">{{ testimonial.company }}</span>
                                 </div>
                                 <div class="rating-start-wrap">
                                     <div class="rating-start">

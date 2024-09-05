@@ -164,7 +164,7 @@ CKEDITOR_CONFIGS = {
                  'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
                 ['Link', 'Unlink'],
                 ['RemoveFormat', 'Source'],
-                ['Image']
+                ['Image', 'Table']
             ],
             'width': 'auto',
             'height': '800px',
@@ -202,6 +202,30 @@ JAZZMIN_SETTINGS = {
         # App with dropdown menu to all its models pages (Permissions checked against models)
         # {"app": "portfolio"},
     ],
+    "hide_models": ['blog.category', 'blog.tag', 'blog.post'],
+
+    "custom_links": {
+        "blog": [
+            {
+                "name": "Categories",
+                "url": "/admin/blog/category/",
+                "icon": "fas fa-layer-group",
+                "permissions": ["blog.view_category"]
+            },
+            {
+                "name": "Tags",
+                "url": "/admin/blog/tag/",
+                "icon": "fas fa-tags",
+                "permissions": ["blog.view_tag"]
+            },
+            {
+                "name": "Posts",
+                "url": "/admin/blog/post/",
+                "icon": "fab fa-blogger-b",
+                "permissions": ["blog.view_post"]
+            }
+        ]
+    },
 
 }
 

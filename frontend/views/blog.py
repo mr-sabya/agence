@@ -7,12 +7,15 @@ def index(request):
     categories = Category.objects.order_by('id').annotate(posts_count=Count('post'))
     posts = Post.objects.order_by('id')
     recent_posts = Post.objects.order_by('id')[:4]
+    post_count = Post.objects.filter().count()
     
     context = {
         'title': 'Blog',
+        'slug': 'all',
         'categories': categories,
         'posts': posts,
         'recent_posts': recent_posts,
+        'post_count': post_count,
     }
     return render(request, 'blog/index.html', context)
 
