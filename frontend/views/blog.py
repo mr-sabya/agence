@@ -1,14 +1,27 @@
 from django.shortcuts import render
 from django.db.models import Count
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from blog.models import Category, Post
 
 
 def index(request):
     categories = Category.objects.order_by('id').annotate(posts_count=Count('post'))
-    posts = Post.objects.order_by('id')
     recent_posts = Post.objects.order_by('id')[:4]
     post_count = Post.objects.filter().count()
     
+    
+    page = request.GET.get('page', 1)
+    post_list = Post.objects.all().order_by('-created_at')
+    paginator = Paginator(post_list, 1)
+
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+        
+        
     context = {
         'title': 'Blog',
         'slug': 'all',

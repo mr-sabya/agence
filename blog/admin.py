@@ -56,6 +56,7 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title', )}
     list_display = ['title', 'slug', 'action']
     search_fields = ['title', 'category']
+    save_as = True
 
 
 #post

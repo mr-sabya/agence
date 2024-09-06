@@ -23,10 +23,24 @@ class Category(models.Model):
 class Technology(models.Model):
     name = models.CharField(max_length=255)
     image = models.ImageField(upload_to='images/tech/', blank=True, null=True)
-    
+
     def __str__(self):
         return self.name
 # ========================= Technology member model end =========================
+# ================================================================================
+
+
+# ================================================================================
+# =========================== client model start =================================
+class Client(models.Model):
+    name = models.CharField(max_length=255)
+    phone = models.CharField(max_length=15)
+    address = models.CharField(max_length=255)
+    website = models.CharField(max_length=255, null=True, blank=True)
+
+    def __str__(self) -> str:
+        return self.name
+# =========================== client model end ===================================
 # ================================================================================
 
 
@@ -36,12 +50,15 @@ class Portfolio(models.Model):
     title = models.CharField(max_length=255)
     slug = models.CharField(max_length=255, unique=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    client = models.ForeignKey(Client, on_delete=models.CASCADE, null=True)
     thumbnail = models.ImageField(upload_to='images/')
     image = models.ImageField(upload_to='images/')
     description = RichTextUploadingField()
     short_description = models.TextField(null=True, max_length=255)
     technologies = models.ManyToManyField(Technology)
-    
+    feature = models.CharField(max_length=255, null=True)
+    timeline = models.CharField(max_length=255, null=True)
+
     def __str__(self) -> str:
         return self.title
 # ================================================================================
@@ -52,19 +69,18 @@ class PortfolioImage(models.Model):
     portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE)
     title = models.CharField(max_length=255, null=True)
     image = models.ImageField(upload_to='images/')
-    
+
     def __str__(self) -> str:
         return self.title
 # ============================= portfolio model end ==============================
 # ================================================================================
 
 
-
 # ================================================================================
 # ========================= designation member model start =======================
 class Degisnation(models.Model):
     name = models.CharField(max_length=255)
-    
+
     def __str__(self) -> str:
         return self.name
 # ========================= designation member model end =========================
@@ -85,11 +101,11 @@ class TeamMember(models.Model):
     twitter = models.CharField(max_length=255)
     linkedin = models.CharField(max_length=255)
     instagram = models.CharField(max_length=255)
-    
+
     def __str__(self) -> str:
         return self.name
-    
-    
+
+
 # ================================================================================
 class Qualification(models.Model):
     team_member = models.ForeignKey(TeamMember, on_delete=models.CASCADE)
@@ -114,7 +130,7 @@ class Skill(models.Model):
     name = models.CharField(max_length=255)
     progress = models.IntegerField()
 # ================================================================================
-    
+
 # =========================== team member model end ==============================
 # ================================================================================
 
@@ -127,9 +143,11 @@ class Testimonial(models.Model):
     company = models.CharField(max_length=100)
     text = models.TextField(max_length=255)
     image = models.ImageField(upload_to='images/client/')
-    rating = models.FloatField(validators=[MinValueValidator(1), MaxValueValidator(5)], help_text="1 to 5 i.e. 4/4.5/5")
-    percentage = models.IntegerField(default=100, help_text="'0.5 => 8', '1 => 15', '1.5 => 28', '2 => 35', '2.5 => 48', '3 => 55', '3.5 => 68', '4 => 80', '4.5 => 88', '5 => 100'")
-    
+    rating = models.FloatField(validators=[MinValueValidator(
+        1), MaxValueValidator(5)], help_text="1 to 5 i.e. 4/4.5/5")
+    percentage = models.IntegerField(
+        default=100, help_text="'0.5 => 8', '1 => 15', '1.5 => 28', '2 => 35', '2.5 => 48', '3 => 55', '3.5 => 68', '4 => 80', '4.5 => 88', '5 => 100'")
+
     def __str__(self) -> str:
         return self.name
 # =========================== testimonal model end ===============================

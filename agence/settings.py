@@ -171,6 +171,7 @@ CKEDITOR_CONFIGS = {
             'extraPlugins': ','.join([
                 'codesnippet',
             ]),
+            "removePlugins": "exportpdf",
         },
 }
 

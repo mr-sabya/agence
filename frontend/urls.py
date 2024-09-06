@@ -9,6 +9,7 @@ urlpatterns = [
     
     path('portfolio', portfolio.index, name='portfolio.index'),
     # portfolio.show
+    path('portfolio/<str:slug>', portfolio.show, name='portfolio.show'),
     
     path('blog', blog.index, name='blog.index'),
     path('blog/<str:slug>', blog.show, name='blog.show'),

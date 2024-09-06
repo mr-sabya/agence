@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Inner Banner html start-->
+{% include 'partials/banner.html' with title=title %}
+<!-- Inner Banner html end-->
+
+<!-- Portfolio html start -->
+<div class="portfolio-detail-section">
+    <div class="container">
+        <div class="portfolio-inner-detail">
+            <div class="row">
+                <div class="col-lg-8 right-sidebar">
+                    <h3>{{ project.title }}</h3>
+                    <figure class="portfolio-img">
+                        <img src="{{ HTTP_HOST }}/media/{{ project.image }}" alt="">
+                    </figure>
+                    <article class="project-summary">
+                        <p>
+                            {{ project.description | safe }}
+                        </p>
+
+                    </article>
+                    <div class="gallery-slider">
+                        {% for image in project.portfolioimage_set.all %}
+                        <div class="gallery-item">
+                            <figure class="gallery-img">
+                                <img src="{{ HTTP_HOST }}/media/{{ image.image }}" alt="">
+                            </figure>
+                        </div>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar">
+                        <div class="widget widget-bg icon-list-content">
+                            <h5 class="bg-title bg-title-w">Project Categories</h5>
+                            <ul>
+                                {% for category in categories %}
+                                <li>
+                                    <a href="#"><i aria-hidden="true" class="fas fa-arrow-circle-right"></i>{{ category.title }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="widget-bg widget-service">
+                            <ul>
+                                <li>
+                                    <div class="service-icon">
+                                        <i aria-hidden="true" class="fas fa-user-tie"></i>
+                                    </div>
+                                    <div class="service-content">
+                                        <h4>Client Details</h4>
+                                        <p>Apex Business and Consulting 654, NewYork-22</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="service-icon">
+                                        <i aria-hidden="true" class="fas fa-tools"></i>
+                                    </div>
+                                    <div class="service-content">
+                                        <h4>Service Provided</h4>
+                                        <p>Product marketing, Aim planning, Project build</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="service-icon">
+                                        <i aria-hidden="true" class="far fa-calendar-alt"></i>
+                                    </div>
+                                    <div class="service-content">
+                                        <h4>Project Timeline</h4>
+                                        <p>5 Days planning, and 1 month for completion</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="widget-bg sidebar-download text-center">
+                            <h5 class="bg-title">Download Brochure</h5>
+                            <p>Magna voluptatum dolorem! Dolores! Sociosqu commodo nobis imperdiet lacinia? Magni!
+                                Felis, elementum nobis.</p>
+                            <a href="#" class="button-round-primary">Brochure.pdf<i aria-hidden="true"
+                                    class="fas fa-file-download"></i></a>
+                            <a href="#" class="button-round-primary">Brochure.doc<i aria-hidden="true"
+                                    class="fas fa-file-download"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Portfolio html end -->
+
+{% endblock %}

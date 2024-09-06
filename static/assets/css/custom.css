@@ -22,3 +22,19 @@
     line-height: 1.2;
     font-family: "Poppins", sans-serif;
 }
+
+.portfolio-detail-section .portfolio-inner-detail .project-summary ul li{
+    position: relative;
+    padding-left: 20px;
+}
+
+.portfolio-detail-section .portfolio-inner-detail .project-summary ul li::after{
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #F94C30;
+    position: absolute;
+    top: 7px;
+    left: 0;
+}

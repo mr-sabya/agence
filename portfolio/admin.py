@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Category, Technology, Portfolio, PortfolioImage, Degisnation, TeamMember, Qualification, Experience, Skill, Testimonial
+from .models import Category, Technology, Portfolio, PortfolioImage, Degisnation, TeamMember, Qualification, Experience, Skill, Testimonial, Client
 # Register your models here.
 
 
@@ -23,6 +23,12 @@ admin.site.register(Technology)
 
 
 # =======================================================================================
+# add client to admin panel
+admin.site.register(Client)
+# =======================================================================================
+
+
+# =======================================================================================
 # inline image and technology with portfolio model
 class Portfolio_Image(admin.StackedInline):
     model = PortfolioImage
@@ -33,6 +39,7 @@ class PortfolioAdmin(admin.ModelAdmin):
     list_display = ['title', 'slug']
     list_filter = ["title", "category"]
     inlines = [Portfolio_Image]
+    save_as = True
 
 
 # portoflio
