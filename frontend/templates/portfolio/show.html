@@ -54,7 +54,8 @@
                                     </div>
                                     <div class="service-content">
                                         <h4>Client Details</h4>
-                                        <p>Apex Business and Consulting 654, NewYork-22</p>
+                                        <p class="m-0">{{ project.client }}, {{ project.client.address }}</p>
+                                        <p class="m-0"><a href="#">Website</a></p>
                                     </div>
                                 </li>
                                 <li>
@@ -63,7 +64,7 @@
                                     </div>
                                     <div class="service-content">
                                         <h4>Service Provided</h4>
-                                        <p>Product marketing, Aim planning, Project build</p>
+                                        <p>{{ project.feature }}</p>
                                     </div>
                                 </li>
                                 <li>
@@ -72,7 +73,7 @@
                                     </div>
                                     <div class="service-content">
                                         <h4>Project Timeline</h4>
-                                        <p>5 Days planning, and 1 month for completion</p>
+                                        <p>{{ project.timeline }}</p>
                                     </div>
                                 </li>
                             </ul>

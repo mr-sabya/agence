@@ -211,7 +211,7 @@ JAZZMIN_SETTINGS = {
                 "name": "Categories",
                 "url": "/admin/blog/category/",
                 "icon": "fas fa-layer-group",
-                "permissions": ["blog.view_category"]
+                "permissions": ["blog.view_category"],
             },
             {
                 "name": "Tags",
