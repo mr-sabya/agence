@@ -61,16 +61,6 @@ It provides both a sleek frontend website and a feature-rich admin interface for
 
 ---
 
-## 📸 Screenshots
-
-### 🖥️ Website Homepage
-![Website Home](static/assets/screenshots/website-home.png)
-
-### ⚙️ Admin Dashboard
-![Admin Dashboard](static/assets/screenshots/admin-dashboard.png)
-
----
-
 ## 🧩 Project Modules
 
 - **Authentication & Authorization**  
