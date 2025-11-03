@@ -1,4 +1,4 @@
-# 🏢 Amin Tech Agency – Django Website
+# 🏢 Web surface Agency – Django Website
 
 A professional digital agency website built with **Django**, featuring a stylish **Jazzmin-powered admin panel** and a fully dynamic **frontend**.  
 This project demonstrates a complete CMS-style agency website where every section — from banner to team members — is editable via the Django admin.
@@ -8,16 +8,16 @@ This project demonstrates a complete CMS-style agency website where every sectio
 ## 🌐 Live Preview (Demo)
 
 ### 🖥️ Website Homepage
-![Website Home](screenshots/website-home.png)
+![Website Home](static/assets/screenshots/website-home.png)
 
 ### ⚙️ Admin Dashboard
-![Admin Dashboard](screenshots/admin-dashboard.png)
+![Admin Dashboard](static/assets/screenshots/admin-dashboard.png)
 
 ---
 
 ## ✨ Overview
 
-**Amin Tech Agency** is a modern Django-based web application designed for digital and creative agencies.  
+**Web surface Agency** is a modern Django-based web application designed for digital and creative agencies.  
 It provides both a sleek frontend website and a feature-rich admin interface for content management.
 
 ---
@@ -63,11 +63,11 @@ It provides both a sleek frontend website and a feature-rich admin interface for
 
 ## 📸 Screenshots
 
-### 🧭 Admin Panel – Dashboard
-![Admin Panel](screenshots/admin-dashboard.png)
+### 🖥️ Website Homepage
+![Website Home](static/assets/screenshots/website-home.png)
 
-### 🌍 Website – Home Page
-![Website Home](screenshots/website-home.png)
+### ⚙️ Admin Dashboard
+![Admin Dashboard](static/assets/screenshots/admin-dashboard.png)
 
 ---
 
@@ -88,15 +88,15 @@ It provides both a sleek frontend website and a feature-rich admin interface for
 ---
 
 ## 📄 License
-This project is developed by **Amin Tech** for demonstration and learning purposes.  
-All rights reserved © 2025 **Amin Tech**.
+This project is developed by **Sabya Roy** for demonstration and learning purposes.  
+All rights reserved © 2025 **Sabya Roy**.
 
 ---
 
 ## 👨‍💻 Developer
 **Developed by:** Sabya Sachi Roy  
 **Email:** [your-email@example.com]  
-**Website:** [https://amintech.example.com](https://amintech.example.com)
+**Website:** [https://websurface.example.com](https://websurface.example.com)
 
 ---
 
